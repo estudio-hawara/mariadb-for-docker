@@ -1,0 +1,29 @@
+version: '3.8'
+services:
+
+  mariadb:
+    environment:
+      - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
+    healthcheck:
+      interval: 30s
+      retries: 3
+      test:
+        [
+          "CMD",
+          "healthcheck.sh",
+          "--connect",
+        ]
+      timeout: 30s
+    hostname: mariadb
+    build:
+      context: docker
+    restart: always
+    volumes:
+      - mariadb:/var/lib/mysql
+
+networks:
+  traefik:
+    external: true
+
+volumes:
+  mariadb:
