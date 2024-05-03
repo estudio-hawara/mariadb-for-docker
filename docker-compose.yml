@@ -26,6 +26,8 @@ services:
 
 networks:
   database:
+    name: "database"
+    external: false
   traefik:
     external: true
 
