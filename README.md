@@ -70,6 +70,22 @@ The container makes use of MariaDB's standard `healthcheck.sh`, so by running a 
 ./dc ps
 ```
 
+## Create a Database
+
+To create a new user with it's related database, there is a `create.sh` script:
+
+```bash
+./dc exec mariadb create.sh cowork
+```
+
+## Drop a Database
+
+To drop an existing user with it's related database, there is a `drop.sh` script:
+
+```bash
+./dc exec mariadb drop.sh cowork
+```
+
 ## Backup the Databases
 
 To run backups for all the databases, you can use the bundled `dump.sh` script:
@@ -81,5 +97,6 @@ To run backups for all the databases, you can use the bundled `dump.sh` script:
 Alternatively, you can specify the database to dump:
 
 ```bash
-./dc exec mariadb dump.sh cowork
+./dc exec mariadb dump.sh cowork > backups/cowork`date +%F\T%T\Z`.sql
 ```
+

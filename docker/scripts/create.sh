@@ -1,5 +1,8 @@
 #!/bin/bash
 
+# Halt on error
+set -e
+
 DATABASE=$1
 
 if [ -z "$DATABASE" ]
@@ -17,4 +20,5 @@ mariadb -uroot -p"$MYSQL_ROOT_PASSWORD" -e"CREATE DATABASE $DATABASE;"
 mariadb -uroot -p"$MYSQL_ROOT_PASSWORD" -e"GRANT ALL PRIVILEGES ON $DATABASE.* TO '$DATABASE'@'%';"
 mariadb -uroot -p"$MYSQL_ROOT_PASSWORD" -e"FLUSH PRIVILEGES;"
 
-echo "New database $DATABASE created with password $PASSWORD"
+echo "New database $DATABASE created with password $PASSWORD." \
+ | grep --color "^\|$DATABASE\|$PASSWORD"
