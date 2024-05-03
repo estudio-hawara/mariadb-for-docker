@@ -67,7 +67,7 @@ Thanks to this, and after giving executing permissions to the new file, you will
 The container makes use of MariaDB's standard `healthcheck.sh`, so by running a `ps` you should see a report about the health of your container:
 
 ```bash
-docker compose ps
+./dc ps
 ```
 
 ## Backup the Databases
@@ -75,5 +75,5 @@ docker compose ps
 To run backups for all the databases, you can use the bundled `dump.sh` script:
 
 ```bash
-docker compose -f docker-compose.yml exec mariadb dump.sh
+./dc exec mariadb dump.sh
 ```
