@@ -17,7 +17,7 @@ Once you have cloned the repository, create a new `.env` file and set your safe 
 cp `env.example .env`
 ```
 
-## Start the Container
+## Docker Container
 
 To start the container with minimum settings, just run:
 
@@ -62,7 +62,7 @@ Thanks to this, and after giving executing permissions to the new file, you will
 ./dc up -d
 ```
 
-## Test the Container Health
+### Test the Container Health
 
 The container makes use of MariaDB's standard `healthcheck.sh`, so by running a `ps` you should see a report about the health of your container:
 
@@ -70,7 +70,9 @@ The container makes use of MariaDB's standard `healthcheck.sh`, so by running a 
 ./dc ps
 ```
 
-## Create a Database
+## Maintenance Scripts
+
+### Create a Database
 
 To create a new user with it's related database, there is a `create.sh` script:
 
@@ -78,7 +80,7 @@ To create a new user with it's related database, there is a `create.sh` script:
 ./dc exec mariadb create.sh cowork
 ```
 
-## Drop a Database
+### Drop a Database
 
 To drop an existing user with it's related database, there is a `drop.sh` script:
 
@@ -86,7 +88,7 @@ To drop an existing user with it's related database, there is a `drop.sh` script
 ./dc exec mariadb drop.sh cowork
 ```
 
-## Backup the Databases
+### Backup the Databases
 
 To run backups for all the databases, you can use the bundled `dump.sh` script:
 
