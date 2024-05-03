@@ -1,3 +1,10 @@
 #!/bin/bash
 
-mariadb-dump --all-databases -uroot -p"$MYSQL_ROOT_PASSWORD"
+DATABASE=$1
+
+if [ -z "$DATABASE" ]
+then
+    DATABASE="--all-databases"
+fi
+
+mariadb-dump $DATABASE -uroot -p"$MYSQL_ROOT_PASSWORD"

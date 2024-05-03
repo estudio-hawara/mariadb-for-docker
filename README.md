@@ -77,3 +77,9 @@ To run backups for all the databases, you can use the bundled `dump.sh` script:
 ```bash
 ./dc exec mariadb dump.sh
 ```
+
+Alternatively, you can specify the database to dump:
+
+```bash
+./dc exec mariadb dump.sh cowork
+```
