@@ -14,7 +14,7 @@ cd mariadb-for-docker
 Once you have cloned the repository, create a new `.env` file and set your safe passwords there.
 
 ```bash
-cp `env.example .env`
+cp env.example .env
 ```
 
 ## Docker Container
@@ -101,4 +101,3 @@ Alternatively, you can specify the database to dump:
 ```bash
 ./dc exec mariadb dump.sh cowork > backups/cowork`date +%F\T%T\Z`.sql
 ```
-
