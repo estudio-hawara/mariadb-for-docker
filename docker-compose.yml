@@ -16,15 +16,15 @@ services:
     build:
       context: docker
     networks:
-      - database
+      - mariadb
       - traefik
     restart: always
     volumes:
       - mariadb:/var/lib/mysql
 
 networks:
-  database:
-    name: "database"
+  mariadb:
+    name: "mariadb"
     external: false
   traefik:
     external: true
