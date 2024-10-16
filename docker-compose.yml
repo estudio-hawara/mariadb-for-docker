@@ -1,6 +1,4 @@
-version: '3.8'
 services:
-
   mariadb:
     environment:
       - MYSQL_ROOT_PASSWORD=${DB_ROOT_PASSWORD}
