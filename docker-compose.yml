@@ -5,29 +5,22 @@ services:
     healthcheck:
       interval: 30s
       retries: 3
-      test:
-        [
-          "CMD",
-          "healthcheck.sh",
-          "--connect",
-        ]
+      test: ["CMD", "healthcheck.sh", "--connect"]
       timeout: 30s
+    container_name: mariadb
     hostname: mariadb
     build:
       context: docker
     networks:
       - mariadb
-      - traefik
     restart: always
     volumes:
       - mariadb:/var/lib/mysql
 
 networks:
   mariadb:
-    name: "mariadb"
+    name: mariadb
     external: false
-  traefik:
-    external: true
 
 volumes:
   mariadb:
