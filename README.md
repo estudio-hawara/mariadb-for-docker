@@ -5,7 +5,7 @@
 To start using this container, start by cloning the repository:
 
 ```bash
-git clone https://github.com/hawara-es/mariadb-for-docker.git
+git clone https://github.com/estudio-hawara/mariadb-for-docker.git
 cd mariadb-for-docker
 ```
 
