@@ -12,7 +12,7 @@ then
     exit 1
 fi
 
-PASSWORD=`openssl rand -base64 16`
+PASSWORD=`openssl rand -hex 16`
 PASSWORD=${PASSWORD:0:16}
 
 mariadb -uroot -p"$MYSQL_ROOT_PASSWORD" -e"CREATE USER '$DATABASE'@'%' IDENTIFIED BY '$PASSWORD' REQUIRE NONE;"
